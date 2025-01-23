@@ -564,10 +564,9 @@ deploy:
   description: 'Release description'
   provider: GitHub
   auth_token:
-    secure: $(github_token)
+    secure: vz0FENC5LXPoMk1XHugxyvAzeJKb+k9T+xuRNOwdGemAcb8WNWcSim1AHpe0hA3X
   artifact: distrib/coredns-$PREFIX.zip
   draft: false
   prerelease: false
   on:
     branch: master
-    APPVEYOR_REPO_TAG: false
