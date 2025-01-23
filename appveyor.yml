@@ -559,3 +559,15 @@ artifacts:
       name: full_package
     - path: distrib/coredns.zip
       name: exe_only
+deploy:
+  release: coredns-v$(APPVEYOR_BUILD_VERSION)
+  description: 'Release description'
+  provider: GitHub
+  auth_token:
+    secure: $(github_token)
+  artifact: distrib/coredns-$PREFIX.zip
+  draft: false
+  prerelease: false
+  on:
+    branch: master
+    APPVEYOR_REPO_TAG: true
